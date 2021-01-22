@@ -3,7 +3,7 @@ String vowels[] = {"a","e","i","o","u"};
 public void setup() 
 {
   String[] lines = {"beast","dough","happy","question","star","three","eagle","try"};
-  System.out.println("there are " + lines.length + " lines");
+  System.out.println("There are " + lines.length + " lines:");
   for (int i = 0 ; i < lines.length; i++) 
   {
     System.out.println(pigLatin(lines[i]));
@@ -45,6 +45,10 @@ public String pigLatin(String sWord)
   {
     return sWord.substring(2) + "qu" + "ay"; 
   } 
+  else if(findFirstVowel(sWord) > 0)
+  {
+    return sWord.substring(findFirstVowel(sWord)) + sWord.substring(0,findFirstVowel(sWord)) + "ay"; 
+  }
   else
   {
     return "ERROR!";
